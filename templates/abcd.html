@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Prediction</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+        }
+
+        .form-box {
+            background-color: #ffffff;
+            width: 350px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .input-group input[type="text"],
+        .input-group input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .checkbox-group {
+            margin-top: 15px;
+            text-align: left;
+        }
+
+        .checkbox-group label {
+            display: block;
+            margin: 8px 0;
+        }
+
+        .form-box input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .form-box input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .result {
+            margin-top: 15px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-box">
+        <h2>Loan Prediction Form</h2>
+        <form action="/predict" method="post">
+            <div class="input-group">
+                
+            <div class="input-group">
+                <label>Gender:</label>
+                <label style="display: inline;"><input type="radio" name="Gender" value="1" required> Male</label>
+                <label style="display: inline; margin-left: 10px;"><input type="radio" name="Gender" value="0" required> Female</label>
+            </div>
+            
+            <div class="input-group">
+                <label>Marital Status:</label>
+                <label style="display: inline;"><input type="radio" name="Married_Yes" value="1"> Married</label>
+                <label style="display: inline; margin-left: 10px;"><input type="radio" name="Married_Yes" value="0"> Not Married</label>
+            </div>
+
+            <label>Dependents:</label>
+                <label style="display: inline;"><input type="radio" name="Dependents" value="0" required> 0</label>
+                <label style="display: inline; margin-left: 10px;"><input type="radio" name="Dependents" value="1" required> 1</label>
+                <label style="display: inline; margin-left: 10px;"><input type="radio" name="Dependents" value="2" required> 2</label>
+                <label style="display: inline; margin-left: 10px;"><input type="radio" name="Dependents" value="3" required> 3</label>
+            </div>
+
+            <div class="input-group">
+                <label>Education:</label>
+                <label style="display: inline;"><input type="radio" name="Education" value="1" required> Graduate</label>
+                <label style="display: inline; margin-left: 10px;"><input type="radio" name="Education" value="0" required> Not Graduate</label>
+            </div>
+
+            <div class="input-group">
+                <label>Employed Status:</label>
+                <label style="display: inline;"><input type="radio" name="Employed_Yes" value="1"> Employed</label>
+                <label style="display: inline; margin-left: 10px;"><input type="radio" name="Employed_Yes" value="0"> Not Employed</label>
+            </div>
+            
+            
+
+            <div class="input-group">
+                <label>Credit History:</label>
+                <label style="display: inline;"><input type="radio" name="Credit_History" value="1" required> Good</label>
+                <label style="display: inline; margin-left: 10px;"><input type="radio" name="Credit_History" value="0" required> Bad</label>
+            </div>
+            
+
+            <div class="input-group">
+                <label>Property Area:</label>
+                <label style="display: inline;"><input type="radio" name="Property_Area" value="0" required> Urban</label>
+                <label style="display: inline; margin-left: 10px;"><input type="radio" name="Property_Area" value="1" required> Semiurban</label>
+                <label style="display: inline; margin-left: 10px;"><input type="radio" name="Property_Area" value="2" required> Rural</label>
+                
+            </div>
+            
+            
+            
+           
+            
+            
+
+            <div class="input-group">
+                <label for="ApplicantIncome">Applicant Income</label>
+                <input type="number" name="ApplicantIncome" id="ApplicantIncome" min="0" required>
+            </div>
+
+            <div class="input-group">
+                <label for="CoapplicantIncome">Coapplicant Income</label>
+                <input type="number" name="CoapplicantIncome" id="CoapplicantIncome"min="0" required>
+            </div>
+
+            
+            <div class="input-group">
+                <label for="LoanAmount">Loan Amount</label>
+                <input type="number" name="LoanAmount" id="LoanAmount"min="0" required>
+            </div>
+            <input type="submit" value="Predict">
+        </form>
+    </body>
+</html>
